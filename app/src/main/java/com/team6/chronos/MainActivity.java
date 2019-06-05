@@ -23,3 +23,5 @@ public class MainActivity extends AppCompatActivity {
 //I changed it again :P
 
 // Howdy
+
+//Sandro, do you know that gods of death eat apples?
