@@ -20,4 +20,4 @@ public class MainActivity extends AppCompatActivity {
 
 // Hello from Oleksii :>
 
-//I changed it. :<
+//I changed it again :P
