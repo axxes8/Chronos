@@ -11,17 +11,3 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
-
-
-
-//Ian Blamires checking in.
-
-//Hello from Taylor
-
-// Hello from Oleksii :>
-
-//I changed it again :P
-
-// Howdy
-
-//Sandro, do you know that gods of death eat apples?
