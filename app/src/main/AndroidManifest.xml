@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".QuickView"
-            android:label="@string/title_activity_quick_view"
+            android:label="Quick View"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
