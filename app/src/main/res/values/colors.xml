@@ -6,5 +6,6 @@
     <color name="gradientStart">#4e6ca3</color>
     <color name="gradientEnd">#8AAAE5</color>
     <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>
