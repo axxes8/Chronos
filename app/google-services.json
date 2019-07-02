@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "751857309578",
+    "firebase_url": "https://chronos-2cffd.firebaseio.com",
+    "project_id": "chronos-2cffd",
+    "storage_bucket": "chronos-2cffd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751857309578:android:e816c6fe2bb80375",
+        "android_client_info": {
+          "package_name": "com.team6.chronos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751857309578-bimi2ndbf8uc51loar8osr26oida5a4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team6.chronos",
+            "certificate_hash": "40b78ef8234d1b96fc7fd35403bf932b5e831588"
+          }
+        },
+        {
+          "client_id": "751857309578-23ek4lbktvkle2v9qjead4thj3ib4re1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXS1jO3zWFwgkZWZNBzjXqZNcM8YgGqAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751857309578-23ek4lbktvkle2v9qjead4thj3ib4re1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
