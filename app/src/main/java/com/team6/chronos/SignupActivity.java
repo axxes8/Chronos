@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 
 public class SignupActivity extends AppCompatActivity{
@@ -55,6 +56,10 @@ public class SignupActivity extends AppCompatActivity{
                     return;
                 }
 
+                if(password.length()<6){
+                    Toast.makeText(SignupActivity.this, "Password Must be at Least 6 Characters in Length", Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(confirmPassword)){
                     Toast.makeText(SignupActivity.this, "Please Confirm Password", Toast.LENGTH_SHORT).show();
                     return;
@@ -66,17 +71,21 @@ public class SignupActivity extends AppCompatActivity{
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+
+                                        if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                                            Toast.makeText(SignupActivity.this, "User With This Email Already Exists",Toast.LENGTH_SHORT).show();
+                                        }
                                         // Sign in success, update UI with the signed-in user's information
                                         startActivity(new Intent(getApplicationContext(),QuickView.class));
-                                        Toast.makeText(SignupActivity.this, "Registration Complete", Toast.LENGTH_SHORT);
-
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Toast.makeText(SignupActivity.this, "Authentification Failed", Toast.LENGTH_SHORT);
+                                        Toast.makeText(SignupActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
 
                                     }
                                 }
                             });
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(SignupActivity.this, "Passwords do not Match", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
