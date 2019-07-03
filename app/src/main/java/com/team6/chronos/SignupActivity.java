@@ -47,6 +47,7 @@ public class SignupActivity extends AppCompatActivity{
                 String confirmPassword = confPassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
+                    //
                     Toast.makeText(SignupActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -76,7 +77,7 @@ public class SignupActivity extends AppCompatActivity{
                                             Toast.makeText(SignupActivity.this, "User With This Email Already Exists",Toast.LENGTH_SHORT).show();
                                         }
                                         // Sign in success, update UI with the signed-in user's information
-                                        startActivity(new Intent(getApplicationContext(),QuickView.class));
+                                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                         Toast.makeText(SignupActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
 
                                     }
