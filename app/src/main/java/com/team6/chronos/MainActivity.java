@@ -20,9 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button SignupNow;
-    private Button Login;
-
     private FirebaseAuth firebaseAuth;
 
    EditText emailInput, passwordInput;
@@ -43,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        relLay1=(RelativeLayout) findViewById(R.id.relLay1);
-        relLay2=(RelativeLayout) findViewById(R.id.relLay2);
+        relLay1= findViewById(R.id.relLay1);
+        relLay2= findViewById(R.id.relLay2);
 
         handler.postDelayed(runnable, 2000); //timer for splash screen
 
-        SignupNow = findViewById(R.id.btnSignupNow);
-        SignupNow.setOnClickListener(new View.OnClickListener() {
+        Button signupNow = findViewById(R.id.btnSignupNow);
+        signupNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSignupActivity();
@@ -59,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.inputEmail);
         passwordInput = findViewById(R.id.inputPassword);
 
-        Login = findViewById(R.id.btnLogin);
+        Button login = findViewById(R.id.btnLogin);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        Login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailInput.getText().toString().trim();
@@ -79,10 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)){
                     Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                     return;
-                }
-
-                if(password.length()<6){
-                    Toast.makeText(MainActivity.this, "Password is too Short", Toast.LENGTH_SHORT).show();
                 }
 
                 firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -109,9 +102,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
-
-    /*public void loginToApp(){
-        Intent intent = new Intent(this, QuickView.class);
-        startActivity(intent);
-    }*/
 }
