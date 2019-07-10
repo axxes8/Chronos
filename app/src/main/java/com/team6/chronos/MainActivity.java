@@ -40,11 +40,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Relative layouts
         relLay1= findViewById(R.id.relLay1);
         relLay2= findViewById(R.id.relLay2);
 
-        handler.postDelayed(runnable, 2000); //timer for splash screen
+        //timer for splash screen
+        handler.postDelayed(runnable, 2000);
 
+        //Text inputs
+        emailInput = findViewById(R.id.inputEmail);
+        passwordInput = findViewById(R.id.inputPassword);
+
+        //Button for openSignupActivity
         Button signupNow = findViewById(R.id.btnSignupNow);
         signupNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +60,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        emailInput = findViewById(R.id.inputEmail);
-        passwordInput = findViewById(R.id.inputPassword);
-
+        //Button for login
         Button login = findViewById(R.id.btnLogin);
 
+        //Button for openForgotActivity
+        Button forgotPass = findViewById(R.id.btnForgot);
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openForgotActivity();
+            }
+        });
 
+        //Firebase authorization
         firebaseAuth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -68,12 +82,13 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordInput.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
-                    //
+                    //Toast popup if email field is empty
                     Toast.makeText(MainActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
+                    //Toast popup if password field is empty
                     Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -83,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
+                                    //If login details are valid, open QuickView activity
                                     startActivity(new Intent(getApplicationContext(), QuickView.class));
 
                                 } else {
-
+                                    //Toast popup if login details are incorrect
                                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
 
                                 }
@@ -96,10 +111,19 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
+
+
     }
 
+    //opens signup activity
     public void openSignupActivity(){
         Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+
+    //opens forgot password activity
+    public void openForgotActivity(){
+        Intent intent = new Intent(this, ForgotPassActivity.class);
         startActivity(intent);
     }
 }
