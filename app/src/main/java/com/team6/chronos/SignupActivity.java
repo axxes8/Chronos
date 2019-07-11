@@ -76,7 +76,7 @@ public class SignupActivity extends AppCompatActivity{
                                         if(task.getException() instanceof FirebaseAuthUserCollisionException){
                                             Toast.makeText(SignupActivity.this, "User With This Email Already Exists",Toast.LENGTH_SHORT).show();
                                         }
-                                        // Sign in success, update UI with the signed-in user's information
+                                        // Signup success, Take user back to login screen
                                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                         Toast.makeText(SignupActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
 
