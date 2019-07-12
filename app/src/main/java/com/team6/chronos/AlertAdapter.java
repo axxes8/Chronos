@@ -14,21 +14,17 @@ public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.ViewHolder> 
     private List<Alert> data;
     private Context context;
 
-    public AlertAdapter(Context context){
-        this.data = new ArrayList<Alert>();
-        this.context = context;
-    }
-
-    public AlertAdapter(List<Alert> data) {
+    public AlertAdapter(Context context, List<Alert> data){
         this.data = data;
+        this.context = context;
     }
 
     @Override
     public AlertAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int itemNum) {
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(
-                R.layout.alert_item_layout, viewGroup, false);
-        return new RecyclerView.ViewHolder(view);
+                R.layout.row_layout, viewGroup, false);
+        return new ViewHolder(view);
     }
 
     @Override
