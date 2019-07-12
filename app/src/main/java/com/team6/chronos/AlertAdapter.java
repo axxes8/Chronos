@@ -1,16 +1,23 @@
 package com.team6.chronos;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.ViewHolder> {
-
     private List<Alert> data;
+    private Context context;
+
+    public AlertAdapter(Context context){
+        this.data = new ArrayList<Alert>();
+        this.context = context;
+    }
 
     public AlertAdapter(List<Alert> data) {
         this.data = data;
@@ -36,15 +43,13 @@ public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView infoField;
-        private TextView statusField;
-        private TextView errorField;
+        TextView infoField, statusField, errorField;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            infoField = itemView.findViewById(R.id.infoField);
-            statusField = itemView.findViewById(R.id.statusField);
-            errorField = itemView.findViewById(R.id.errorField);
+            infoField = itemView.findViewById(infoField);
+            statusField = itemView.findViewById(statusField);
+            errorField = itemView.findViewById(errorField);
         }
 
         public TextView getInfoField() {
