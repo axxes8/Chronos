@@ -18,7 +18,7 @@ public class QuickView extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AlertAdapter adapter;
-    private List<Alert> testList = new ArrayList<Alert>();
+    private List<Alert> testList = new ArrayList<Alert>(); // Stopgap measure
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

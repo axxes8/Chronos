@@ -39,26 +39,29 @@ public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView infoField, statusField, errorField;
+        TextView nameField, serviceField, dateField, timeField;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            infoField = itemView.findViewById(infoField);
-            statusField = itemView.findViewById(statusField);
-            errorField = itemView.findViewById(errorField);
+            nameField = itemView.findViewById(R.id.nameField);
+            serviceField = itemView.findViewById(R.id.serviceField);
+            dateField = itemView.findViewById(R.id.dateField);
+            timeField = itemView.findViewById(R.id.timeField);
         }
 
-        public TextView getInfoField() {
-            return infoField;
+        public TextView getNameField() {
+            return nameField;
         }
 
-        public TextView getStatusField() {
-            return statusField;
+        public TextView getServiceField() {
+            return serviceField;
         }
 
-        public TextView getErrorField() {
-            return errorField;
+        public TextView getDateField() {
+            return dateField;
         }
+
+        public TextView getTimeField() { return timeField; }
     }
 
 }
